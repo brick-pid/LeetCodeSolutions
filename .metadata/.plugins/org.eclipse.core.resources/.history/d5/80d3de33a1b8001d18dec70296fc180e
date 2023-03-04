@@ -1,0 +1,40 @@
+package test;
+
+class Solution {
+	public String longestPalindrome(String s) {
+		String ans = "";
+		int l=0, r=0;
+		for(int i = 0; i < s.length(); i++) {
+			int odd = expandCenter(s, i, i);
+			int even = expandCenter(s, i, i+1);
+			int max = odd>even? odd:even;
+			if(max>r-1+1) {
+				if(max % 2 == 0) {
+					l = i-max/2+1;
+				}else {
+					l = i-max/2;					
+				}
+				r = i+max/2;
+			}
+		}
+		return s.substring(l, r+1);
+
+	}
+	
+	/**
+	 * 回文串拓展函数
+	 * @param s 字符串
+	 * @param l 左中心下标
+	 * @param r 右中心下标
+	 * @return 以l, r为中心的最长回文串长度
+	 */
+	private int expandCenter(String s, int l, int r) {
+		while(l>=0 && r<s.length() && s.charAt(l) == s.charAt(r)) {
+			l--;
+			r++;				
+		}
+		return r-1-1;
+		
+	}
+}
+

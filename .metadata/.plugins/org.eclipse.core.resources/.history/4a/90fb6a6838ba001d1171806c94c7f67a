@@ -1,0 +1,33 @@
+
+public class Solution {
+	// 棋盘状态空间
+	private boolean[][] board;
+	
+	// 记录每一行放置皇后的下标
+	private int[] queens;
+	
+	// 记录每一次搜索时，对列、主对角线、副对角线的占用情况
+	private boolean[] col;
+	private boolean[] mainDiag;
+	private boolean[] viceDiag;
+	
+	// 解的个数
+	private int count;
+	
+	public int totalNQueens(int n) {
+		// 初始化
+		count = 0;
+		queens = new int[n];
+		col = new boolean[n];
+		mainDiag = new boolean[2n-1];
+		viceDiag = new boolean[2n-1];
+		
+		backtrack(row, n);
+		
+		return count;
+    }
+	
+	private void backtrack(int row, int n) {
+		
+	}
+}

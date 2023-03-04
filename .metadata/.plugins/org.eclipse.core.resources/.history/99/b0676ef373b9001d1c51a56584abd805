@@ -1,0 +1,12 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class testRomeNumber {
+
+	@Test
+	void test() {
+		assertEquals("LVIII", new RomeNumber().intToRoman(58));
+	}
+
+}

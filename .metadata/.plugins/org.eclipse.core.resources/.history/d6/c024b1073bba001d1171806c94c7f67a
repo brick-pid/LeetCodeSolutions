@@ -1,0 +1,24 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+class Test {
+
+	@org.junit.jupiter.api.Test
+	void test1Queens() {
+		assertEquals(1, new Solution().totalNQueens(1));
+	}
+	
+	@org.junit.jupiter.api.Test
+	void test4Queens() {
+		assertEquals(2, new Solution().totalNQueens(4));
+	}
+	
+	@org.junit.jupiter.api.Test
+	void test8Queens() {
+		assertEquals(92, new Solution().totalNQueens(8));
+	}
+	
+	@org.junit.jupiter.api.Test
+	void test10Queens() {
+		assertEquals(721, new Solution().totalNQueens(10));
+	}
+}

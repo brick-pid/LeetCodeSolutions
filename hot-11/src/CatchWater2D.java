@@ -1,0 +1,18 @@
+
+public class CatchWater2D {
+	public int maxArea(int[] height) {
+		int l = 0, r = height.length - 1;
+		int max = 0;
+		while(l < r) {
+			//System.out.println("l=" + l + "; r=" + r + " ;Max:" + max);
+			int cur = Math.min(height[l], height[r]) * (r-l);
+			if(cur > max) max = cur;
+			
+			// 启发式方法：移动更矮的柱子
+			if(height[l] < height[r]) l++;
+			else r--;
+		}
+		return max;
+    }
+}
+

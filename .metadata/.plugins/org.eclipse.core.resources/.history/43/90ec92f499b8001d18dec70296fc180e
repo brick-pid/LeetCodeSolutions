@@ -1,0 +1,38 @@
+package test;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+class Solution {
+    /**
+    ** Ë«Ö¸Õë
+     */
+    public int lengthOfLongestSubstring(String s) {
+        int l=0, r=0;
+        int max = 0;
+        Set<Character> charSet = new HashSet<>();
+        while(r< s.length()) {
+            if(!charSet.contains(s.charAt(r))) {
+                charSet.add(s.charAt(r));
+                r++;
+                if(r - l > max) max = r - l;
+            }else{
+                while(s.charAt(l) != s.charAt(r)) {
+                    charSet.remove(s.charAt(l));
+                    l++;
+                }
+                l++;
+            }
+        }
+        Map<Integer, Integer> map = new HashMap<>();
+        map.ge
+        return max;
+    }
+}
+
+
+
+
+

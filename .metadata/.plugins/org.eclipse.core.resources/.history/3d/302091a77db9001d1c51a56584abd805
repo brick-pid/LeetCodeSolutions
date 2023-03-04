@@ -1,0 +1,33 @@
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+
+public class sum3 {
+	public List<List<Integer>> threeSum(int[] nums) {
+		List<List<Integer>> ans = new LinkedList<>();
+		if(nums.length < 3) return ans;
+		if(nums.length == 3 && nums[0] + nums[1] + nums[2] != 0) return ans;
+		
+		// map: val -> index of input array
+		Map<Integer, Integer> val2Index = new HashMap<>();
+		for(int i = 0; i < nums.length; i++) {
+			val2Index.put(nums[i], i);
+		}
+		
+		//find for each a+b, decide whether -a-b in nums array
+		for(int i = 0; i < nums.length; i++) {
+			for(int j = i + 1; j < nums.length; j++) {
+				if(val2Index.containsKey(-nums[i]-nums[j])) {
+					int c = val2Index.get(-nums[i]-nums[j]);
+					System.out.println("i=" + i + " ; j=" + j);
+					System.out.println("add: a=" + nums[i] + "; b=" + nums[j] + "; c=" +c);
+					ans.add(new LinkedList<Integer>(Arrays.asList(nums[i], nums[j], c)));
+				}
+			}
+		}
+		System.out.println(ans);
+		return ans;
+    }
+}

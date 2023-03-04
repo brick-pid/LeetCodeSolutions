@@ -1,0 +1,27 @@
+package test;
+
+class Solution {
+	public String longestPalindrome(String s) {
+		int l = 0, r = 0;
+		String ans = "";
+		for(int i = 0; i < s.length(); i++) {
+			int odd = expand(s, i, i);
+			int even = expand(s, i, i+1);
+			int max = Math.max(odd, even);
+			if(max > r - l + 1) {
+				l = i - (max+1)/2 - 1; //保证无论奇偶(1, 2)，l都固定
+				r = i + max/2;
+			}
+		}
+		return s.substring(l, r + 1);
+	}
+	
+	public int expand(String s, int l, int r) {
+		while(l >= 0 && r <s.length() && s.charAt(l) == s.charAt(r)) {
+			l--;
+			r++;
+		}
+		return r - l - 1;
+	}
+}
+

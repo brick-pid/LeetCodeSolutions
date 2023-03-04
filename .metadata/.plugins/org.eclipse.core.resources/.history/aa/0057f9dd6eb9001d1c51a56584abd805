@@ -1,0 +1,23 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class RomeNumber {
+	public String intToRoman(int num) {
+		Map<Integer, String> romeNumber = new HashMap<>();
+		romeNumber.putAll(romeNumber);
+		// ¼ÇÂ¼13¸ö×Ö·ûÓ³Éä
+		romeNumber.put(1000, "M");
+		romeNumber.put(900, "CM");
+		romeNumber.put(500, "D");
+		romeNumber.put(400, "CD");
+		romeNumber.put(100, "C");
+		romeNumber.put(90, "XL");
+		romeNumber.put(50, "L");
+		romeNumber.put(40, "XL");
+		romeNumber.put(10, "X");
+		romeNumber.put(9, "IX");
+		romeNumber.put(5, "V");
+		romeNumber.put(4, "IV");
+		romeNumber.put(1, "I");
+    }
+}

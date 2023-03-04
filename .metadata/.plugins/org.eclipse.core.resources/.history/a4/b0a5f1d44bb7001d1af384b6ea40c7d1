@@ -1,0 +1,20 @@
+package test;
+
+import java.util.HashMap;
+import java.util.Map;
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> indexOf = new HashMap<>();
+        for(int i = 0; i < nums.length; i++) {
+        	indexOf.put(nums[i], i);
+        }
+        for(int i = 0; i < nums.length; i++) {
+        	if(indexOf.containsKey(target - nums[i])) {
+                if(i != indexOf.get(target - nums[i]))
+        		    return new int[] {i, indexOf.get(target - nums[i])};
+        	}
+        }
+        return new int[0];
+    }
+}

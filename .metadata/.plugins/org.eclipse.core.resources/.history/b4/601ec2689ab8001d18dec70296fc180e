@@ -1,0 +1,16 @@
+package test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class Testcase {
+
+	@Test
+	public void test() {
+		Solution solution = new Solution();
+		int len = solution.lengthOfLongestSubstring("abcabcbb");
+		assertEquals(len, 3);
+	}
+
+}

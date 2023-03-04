@@ -1,0 +1,23 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class testRomeNumber {
+
+	@Test
+	void testI2R() {
+		assertEquals("LVIII", new RomeNumber().intToRoman(58));
+	}
+	
+	@Test
+	void testR2I() {
+		assertEquals(58, new RomeNumber().romanToInt("LVIII"));
+	}
+	
+	@Test
+	void testR2Isimple() {
+		System.out.println("start simple");
+		assertEquals(5, new RomeNumber().romanToInt("V"));
+	}
+
+}
