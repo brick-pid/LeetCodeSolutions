@@ -20,6 +20,7 @@ public class Solution {
 	/*
 	 * 格式化输出当前靠左的最长子串, 并将已输出的字符标记flag数组
 	 * 格式为: `[字符]( [原下标])*`
+	 * 寻找当前最长子串时，运用双指针技巧
 	 * @return 是否存在Max串, 当所有字符都输出时返回false
 	 */
 	private boolean findMax() {
